@@ -4,13 +4,16 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 
 <url>
   <loc>https://c2g.space/</loc>
-  <lastmod>2018-12-24T17:10:58+00:00</lastmod>
+  <lastmod>2018-12-25T20:24:00+00:00</lastmod>
 </url>
 
+<url>
+  <loc>https://c2g.space/dbg/</loc>
+  <lastmod>2018-12-25T20:24:00+00:00</lastmod>
+</url>
 
 </urlset>
