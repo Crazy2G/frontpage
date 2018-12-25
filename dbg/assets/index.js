@@ -1,8 +1,14 @@
 $(document).ready(function(){
     $('#generator').on('submit', (e) => {
         e.preventDefault();
+        Swal.showLoading();
+        Swal({
+            title: 'Loading...',
+            imageUrl: 'https://c2g.space/dbg/assets/spinner.gif'
+        });
         const serverId = $('#serverId').val();
         if(serverId.split('').length !== 18 || parseInt(serverId) === NaN) {
+            Swal.hideLoading();
             return Swal({
                 title: 'Invalid ID',
                 text: `"${serverId}" isn't a valid server ID. You need to give me a valid server ID, such as 297732013006389252 for example.`,
@@ -13,6 +19,7 @@ $(document).ready(function(){
             .then((guild) => {
                 const styleId = $('#styleId').val();
                 const imageUrl = `https://discordapp.com/api/guilds/${serverId}/widget.png?style=banner${styleId}&t=${Date.now()}`;
+                Swal.hideLoading();
                 return Swal({
                     title: 'Gotcha!',
                     html: [`Here's the guild widget for "${guild.name}"!`,
@@ -35,6 +42,7 @@ $(document).ready(function(){
                         text: 'The guild you gave me has the widget disabled. Please, talk to an admin so that they can enable the widget in that guild.'
                     }
                 }
+                Swal.hideLoading();
                 return Swal({
                     title: cases[e.status].title,
                     text: cases[e.status].text,
