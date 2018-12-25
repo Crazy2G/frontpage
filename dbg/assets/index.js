@@ -15,6 +15,11 @@ $(document).ready(function(){
                 type: 'error'
             });
         }
+        $.ajaxSetup({
+            headers: {
+               'Access-Control-Allow-Origin': "null"
+            }
+        });         
         $.get(`https://discordapp.com/api/guilds/${serverId}/widget.json`)
             .then((guild) => {
                 const styleId = $('#styleId').val();
